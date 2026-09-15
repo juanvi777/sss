@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#a71f56" />
+  <link rel="stylesheet" href="public/style.css">
+  <title>Suldery Nails | Mi agenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <a class="logo" href="cliente.html"><img src="assets/suldery-nails-logo.svg" alt="" /><span>Suldery <em>Nails</em></span></a>
+      <div class="user-menu"><span id="welcomeName">Hola</span><button type="button" class="secondary-button" onclick="logout()">Cerrar sesión</button></div>
+    </header>
+
+    <section class="dashboard-intro">
+      <p class="eyebrow">RESERVA EN LÍNEA</p>
+      <h1>Tu próximo momento de<br /><em>brillo</em> comienza aquí.</h1>
+      <p>Elige servicio, día y hora. Las citas enviadas quedan pendientes hasta que Suldery las confirme.</p>
+    </section>
+
+    <section class="booking-grid">
+      <form id="bookingForm" class="booking-card" novalidate>
+        <div class="card-heading"><div><p class="eyebrow">NUEVA CITA</p><h2>Agenda tu cita</h2></div><span class="flower">✿</span></div>
+        <label>Servicio
+          <select id="service">
+            <option value="Manicure semipermanente">Manicure semipermanente · 60 min</option>
+            <option value="Uñas acrílicas">Uñas acrílicas · 90 min</option>
+            <option value="Diseño personalizado">Diseño personalizado · 120 min</option>
+            <option value="Pedicure spa">Pedicure spa · 75 min</option>
+          </select>
+        </label>
+        <div class="calendar-control">
+          <div class="calendar-topbar"><button id="previousMonth" class="month-button" type="button" aria-label="Mes anterior">‹</button><h3 id="calendarMonthLabel"></h3><button id="nextMonth" class="month-button" type="button" aria-label="Mes siguiente">›</button></div>
+          <div class="calendar-weekdays"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div>
+          <div id="calendarDays" class="calendar-days"></div>
+          <p id="selectedDateText" class="selected-date-text">Elige un día para ver los horarios.</p>
+        </div>
+        <div class="time-selection"><span class="field-label">Horarios disponibles</span><div id="timeSlots" class="time-slots"></div></div>
+        <p id="bookingMessage" class="form-message" role="alert"></p>
+        <button id="bookingButton" type="button" class="primary-button" onclick="crearCita()">Confirmar cita <span>→</span></button>
+      </form>
+
+      <aside class="appointments-card">
+        <div class="card-heading"><div><p class="eyebrow">MI AGENDA</p><h2>Mis citas</h2></div><span class="flower">♡</span></div>
+        <div id="appointmentsList" class="appointments-list"></div>
+      </aside>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="portfolio-heading"><div><p class="eyebrow">INSPÍRATE</p><h2>Diseños hechos con amor</h2></div><p>Color, brillo y mucha dedicación para cada una de nuestras clientas.</p></div>
+      <div id="clientGallery" class="photo-gallery"></div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+  <script src="cliente.js"></script>
+</body>
+</html>

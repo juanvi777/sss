@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0b1d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Suldery Nails">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/assets/suldery-nails-icon-180.png">
+  <title>Suldery Nails | Panel de Suldery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=2032">
+</head>
+<body class="dashboard-page owner-page">
+  <main class="dashboard-shell">
+    <header class="dashboard-header glass-card">
+      <a class="logo" href="duena.html"><img src="/assets/suldery-nails-logo.jpeg" alt="Suldery Nails"><span>Suldery <em>Nails</em></span></a>
+      <div class="user-menu"><button id="installAppButton" class="install-app-button" type="button" hidden>＋ Instalar app</button><button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro"><span class="theme-icon">☾</span><span class="theme-label">Modo oscuro</span></button><span>Panel de Suldery</span><button class="secondary-button" type="button" data-action="logout">Cerrar sesión</button></div>
+    </header>
+
+    <section class="hero-dashboard owner-hero">
+      <div>
+        <div class="brand-pill soft">✦ ADMINISTRACIÓN</div>
+        <h1>Tu agenda, bajo<br><em>control.</em></h1>
+        <p>Aprueba clientas, confirma citas, organiza tu horario y administra las fotos que verán tus clientas.</p>
+      </div>
+      <div class="owner-mini-card"><strong id="ownerDateLabel">Hoy</strong><span>Una agenda ordenada, un día más tranquilo ♡</span></div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span>CLIENTAS</span><strong id="pendingCount">0</strong><small>solicitudes pendientes</small></article>
+      <article class="stat-card"><span>CITAS</span><strong id="todayCount">0</strong><small>citas programadas hoy</small></article>
+      <article class="stat-card"><span>PORTAFOLIO</span><strong id="photoCount">0</strong><small>fotos publicadas</small></article>
+    </section>
+
+    <section class="owner-grid">
+      <article class="admin-card glass-card">
+        <div class="card-heading"><div><p class="eyebrow">CUENTAS</p><h2>Solicitudes de clientas</h2></div><span class="flower">✿</span></div>
+        <div id="pendingUsersList" class="admin-list"></div>
+      </article>
+
+      <article class="admin-card glass-card">
+        <div class="card-heading"><div><p class="eyebrow">AGENDA</p><h2>Solicitudes de citas</h2></div><span class="flower">✦</span></div>
+        <div id="ownerAppointmentsList" class="admin-list"></div>
+      </article>
+    </section>
+
+    <section class="admin-card glass-card schedule-manager">
+      <div class="card-heading"><div><p class="eyebrow">HORARIO</p><h2>Define tus horas de atención</h2></div><span class="flower">♡</span></div>
+      <p class="manager-note">Por defecto trabajas de 7:00 a. m. a 6:00 p. m., de lunes a sábado. Puedes cerrar un día o cambiar su hora desde aquí.</p>
+      <div id="scheduleGrid" class="schedule-grid"></div>
+    </section>
+
+    <section class="admin-card glass-card blocked-dates-card">
+      <div class="card-heading"><div><p class="eyebrow">DÍAS NO DISPONIBLES</p><h2>Bloquea fechas especiales</h2></div><span class="flower">✦</span></div>
+      <p class="manager-note">Además del domingo y tus días de descanso semanales, puedes bloquear fechas específicas como vacaciones o días personales.</p>
+      <form id="blockedDateForm" class="blocked-date-form">
+        <label>Fecha<input id="blockedDate" type="date" required></label>
+        <label>Motivo (opcional)<input id="blockedReason" type="text" maxlength="255" placeholder="Ej. Vacaciones"></label>
+        <button class="primary-button" type="submit">Bloquear día <span>→</span></button>
+      </form>
+      <div id="blockedDatesList" class="blocked-dates-list"></div>
+    </section>
+
+    <section class="admin-card glass-card manual-booking-card">
+      <div class="card-heading"><div><p class="eyebrow">AGENDA MANUAL</p><h2>Registra una cita tú misma</h2></div><span class="flower">✦</span></div>
+      <p class="manager-note">Ideal para clientas que te escriben directamente o que prefieren agendar contigo.</p>
+      <form id="ownerBookingForm" class="owner-booking-form">
+        <label>Nombre de la clienta<input id="ownerClientName" type="text" placeholder="Nombre completo"></label>
+        <label>Servicio<select id="ownerService"><option value="Manicure semipermanente">Manicure semipermanente · 1 hora</option><option value="Pedicure">Pedicure · 1 hora</option><option value="Polygel">Polygel · 2 horas</option><option value="Dipping">Dipping · 1 hora</option><option value="Forrado">Forrado · 1 hora</option></select>
+          <small id="ownerServiceDurationHint" class="service-duration-hint">Duración: 1 hora</small>
+        </label>
+        <label>Fecha<input id="ownerAppointmentDate" type="date"></label>
+        <label>Hora disponible<select id="ownerAppointmentTime"></select></label>
+        <p id="ownerBookingMessage" class="form-message"></p>
+        <button id="ownerBookingButton" class="primary-button" type="submit">Agendar cita <span>→</span></button>
+      </form>
+    </section>
+
+    <section class="admin-card glass-card portfolio-manager">
+      <div class="card-heading"><div><p class="eyebrow">PORTAFOLIO</p><h2>Fotos de tus diseños</h2></div><label class="small-button file-button" for="photoPicker">+ Elegir foto</label></div>
+      <p class="manager-note">Hasta 6 fotos. Se muestran en el carrusel de tus clientas. Usa las flechas para cambiar el orden.</p>
+      <input id="photoPicker" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif" class="hidden">
+      <div id="ownerGallery" class="photo-gallery owner-gallery"></div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+  <script src="duena.js"></script>
+</body>
+</html>

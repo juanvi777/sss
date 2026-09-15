@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0b1d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Suldery Nails">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/assets/suldery-nails-icon-180.png">
+  <title>Suldery Nails | Crear cuenta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=2032">
+</head>
+<body class="auth-page">
+  <main class="auth-shell auth-shell-reverse">
+    <section class="brand-panel">
+      <div class="brand-panel-inner">
+        <div class="brand-pill">♡ NUEVA CLIENTA</div>
+        <h1>Tu próxima cita<br><em>empieza aquí.</em></h1>
+        <p class="brand-copy">Crea tu cuenta para entrar a la agenda digital y recibir la confirmación de Suldery.</p>
+        <div class="experience-cloud compact">
+          <span class="cloud-sparkle">✿</span>
+          <div><strong>Una agenda hecha con cariño</strong><p>Tu solicitud queda pendiente hasta que Suldery la apruebe.</p></div>
+        </div>
+        <div class="brand-note">Después podrás escoger servicio, día y hora desde cualquier dispositivo.</div>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-card">
+        <div class="logo-frame">
+          <img src="/assets/suldery-nails-logo.jpeg" alt="Logo de Suldery Nails">
+        </div>
+        <p class="eyebrow">CREAR CUENTA</p>
+        <h2>Hola, futura clienta</h2>
+        <p class="form-intro">Déjanos tus datos y Suldery revisará tu solicitud.</p>
+
+        <form id="registerForm" novalidate>
+          <label for="registerName">Nombre completo
+            <input id="registerName" type="text" autocomplete="name" placeholder="¿Cómo te llamas?">
+          </label>
+          <label for="registerEmail">Correo electrónico
+            <input id="registerEmail" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+          </label>
+          <label for="registerPassword">Crea una contraseña
+            <input id="registerPassword" type="password" autocomplete="new-password" placeholder="Mínimo 6 caracteres">
+          </label>
+          <label for="registerPassword2">Repite la contraseña
+            <input id="registerPassword2" type="password" autocomplete="new-password" placeholder="Vuelve a escribirla">
+          </label>
+          <p id="registerMessage" class="form-message" role="alert"></p>
+          <button id="registerButton" class="primary-button" type="submit">Solicitar mi cuenta <span>→</span></button>
+        </form>
+
+
+        <button id="installAppButton" class="install-app-button" type="button" hidden>＋ Instalar Suldery Nails</button>
+
+        <p class="approval-note">Tu cuenta deberá ser aprobada por Suldery. Puedes escribirle al <a href="https://wa.me/573106319093" target="_blank" rel="noopener">310 631 9093</a>.</p>
+        <button id="backToLogin" class="secondary-button wide" type="button">← Volver a iniciar sesión</button>
+      </div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+  <script src="registro.js"></script>
+</body>
+</html>

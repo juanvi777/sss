@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#a71f56" />
+  <title>Suldery Nails | Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/style.css">
+</head>
+<body class="auth-page">
+  <main class="access-layout">
+    <section class="brand-panel">
+      <p class="eyebrow">ESTUDIO DE UÑAS</p>
+      <h1>Donde tus manos<br /><em>brillan.</em></h1>
+      <p class="brand-copy">Un espacio creado para que te consientas, brilles y salgas feliz.</p>
+      <div class="suldery-intro"><span>17 años de experiencia</span><p>Hola, soy Suldery. Llevo años dedicando mi corazón a esta hermosa profesión y creando uñas que cuentan tu estilo.</p></div>
+      <div class="mini-card"><span>✦</span><div><strong>Reservas fáciles</strong><small>Elige día y hora desde cualquier dispositivo.</small></div></div>
+      <div class="mini-card"><span>♡</span><div><strong>Atención cercana</strong><small>Tu cuenta queda bajo aprobación para cuidar la agenda.</small></div></div>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-content">
+        <img class="access-logo" src="assets\suldery-nails-logo.jpeg" alt="Suldery Nails" />
+        <p class="eyebrow">BIENVENIDA</p>
+        <h2>Qué alegría verte</h2>
+        <p>Ingresa a tu cuenta para reservar tu próxima cita.</p>
+
+        <form id="loginForm" class="auth-form" novalidate>
+          <label>Correo electrónico
+            <input id="loginEmail" type="email" placeholder="tucorreo@ejemplo.com" required autocomplete="username" />
+          </label>
+          <label>Contraseña
+            <input id="loginPassword" type="password" placeholder="••••••••" required autocomplete="current-password" />
+          </label>
+          <p id="loginMessage" class="form-message" role="alert"></p>
+          <button id="loginButton" type="button" class="primary-button" onclick="login()">Iniciar sesión <span>→</span></button>
+        </form>
+
+        <div class="switch-block">
+          <span>¿Aún no tienes cuenta?</span>
+          <button type="button" class="link-button" onclick="irRegistro()">Regístrate aquí</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+:root{
+  --rose:#c62868;
+  --rose-dark:#9f1d53;
+  --rose-soft:#f7c8da;
+  --rose-pale:#fff0f6;
+  --blush:#fff8fb;
+  --wine:#4b1d31;
+  --ink:#34232c;
+  --muted:#7d6872;
+  --line:#f0d8e2;
+  --white:#fff;
+  --green:#3f7a5e;
+  --red:#c4384e;
+  --shadow:0 24px 60px rgba(112,39,69,.12);
+  --shadow-soft:0 12px 30px rgba(112,39,69,.09);
+  --radius:26px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 12% 12%,#fff 0,#fff7fa 40%,#f8edf2 100%);color:var(--ink);font-family:"DM Sans",sans-serif}
+button,input,select{font:inherit}
+button,a{touch-action:manipulation}
+a{color:inherit}
+img{max-width:100%}
+
+.auth-page{display:grid;min-height:100vh;overflow-x:hidden}
+.auth-shell{min-height:100vh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr)}
+.auth-shell-reverse{grid-template-columns:minmax(360px,.95fr) minmax(0,1.05fr)}
+.brand-panel{position:relative;display:flex;align-items:center;padding:clamp(2rem,6vw,6rem);background:linear-gradient(145deg,#f9d7e5 0%,#fff2f7 56%,#f4d9e6 100%);overflow:hidden}
+.brand-panel:before,.brand-panel:after{content:"";position:absolute;border-radius:50%;filter:blur(8px);opacity:.55;pointer-events:none}
+.brand-panel:before{width:420px;height:420px;left:-190px;top:-180px;background:#f6abc8}
+.brand-panel:after{width:380px;height:380px;right:-160px;bottom:-180px;background:#f5b9ce}
+.brand-panel-inner{position:relative;z-index:1;max-width:620px}
+.brand-pill{display:inline-flex;align-items:center;gap:.45rem;padding:.58rem .9rem;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(198,40,104,.12);color:var(--rose-dark);font-size:.72rem;font-weight:800;letter-spacing:.12em;box-shadow:0 8px 24px rgba(155,38,81,.08)}
+.brand-pill.soft{background:#fff9fc}
+.brand-panel h1,.hero-dashboard h1{margin:1.15rem 0 1rem;font:700 clamp(3.1rem,6.3vw,6rem)/.93 "Playfair Display",serif;letter-spacing:-.045em;color:var(--wine)}
+.brand-panel h1 em,.hero-dashboard h1 em{font-style:italic;color:var(--rose)}
+.brand-copy{max-width:560px;margin:0;color:#705864;font-size:1.02rem;line-height:1.8}
+.experience-cloud{position:relative;display:flex;gap:1rem;align-items:flex-start;max-width:560px;margin-top:2rem;padding:1.25rem 1.4rem;border-radius:34px;background:rgba(255,195,218,.64);border:1px solid rgba(198,40,104,.12);box-shadow:0 16px 36px rgba(198,40,104,.1)}
+.experience-cloud.compact{max-width:500px}
+.experience-cloud:before,.experience-cloud:after{content:"";position:absolute;border-radius:50%;background:inherit;opacity:.9;z-index:-1}
+.experience-cloud:before{width:62px;height:62px;left:-18px;bottom:-16px}.experience-cloud:after{width:42px;height:42px;right:46px;top:-14px}
+.cloud-sparkle{flex:0 0 auto;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#fff6fa;color:var(--rose);font-size:1.1rem;box-shadow:0 7px 18px rgba(198,40,104,.12)}
+.experience-cloud strong{display:block;font-size:1rem;color:var(--wine)}
+.experience-cloud p{margin:.45rem 0 0;color:#745966;line-height:1.55;font-size:.84rem}
+.brand-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin-top:1rem}
+.feature-chip{display:flex;gap:.75rem;align-items:flex-start;padding:1rem;border-radius:18px;background:rgba(255,255,255,.58);border:1px solid rgba(198,40,104,.09);box-shadow:var(--shadow-soft)}
+.feature-chip>span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#fff4f8;color:var(--rose);font-size:1rem}
+.feature-chip b{display:block;font-size:.84rem}.feature-chip small{display:block;margin-top:.22rem;color:var(--muted);line-height:1.45}
+.brand-note{margin-top:1.2rem;color:#745966;font-size:.86rem}
+.form-panel{display:flex;align-items:center;justify-content:center;padding:clamp(1.2rem,4vw,4rem);background:rgba(255,255,255,.64)}
+.form-card{width:min(500px,100%);padding:clamp(1.4rem,4vw,3rem);border:1px solid rgba(198,40,104,.11);border-radius:30px;background:rgba(255,255,255,.94);box-shadow:var(--shadow)}
+.logo-frame{width:102px;height:102px;padding:7px;border-radius:30px;background:linear-gradient(145deg,#fff,#f8ccd9);box-shadow:0 16px 35px rgba(198,40,104,.15);margin-bottom:1.3rem}
+.logo-frame img{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block}
+.eyebrow{margin:0 0 .45rem;color:var(--rose);font-size:.67rem;font-weight:800;letter-spacing:.16em}
+.form-card h2,.card-heading h2,.portfolio-heading h2{margin:0;color:var(--wine);font:700 clamp(1.7rem,3.2vw,2.35rem)/1.12 "Playfair Display",serif}
+.form-intro{margin:.6rem 0 0;color:var(--muted);line-height:1.6}
+#loginForm,#registerForm{display:grid;gap:1rem;margin-top:1.7rem}
+label{display:grid;gap:.45rem;color:var(--ink);font-size:.8rem;font-weight:800}
+input,select{width:100%;padding:.94rem 1rem;border:1px solid var(--line);border-radius:15px;outline:none;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s,transform .2s}
+input::placeholder{color:#b19da6}input:focus,select:focus{border-color:#e09ab7;box-shadow:0 0 0 4px rgba(198,40,104,.1)}
+.password-wrap{position:relative}.password-wrap input{padding-right:3.3rem}.password-toggle{position:absolute;right:.45rem;top:50%;transform:translateY(-50%);width:2.35rem;height:2.35rem;border:0;border-radius:12px;background:#fff3f8;color:var(--rose);cursor:pointer}
+.primary-button,.secondary-button,.small-button,.link-button{cursor:pointer;text-decoration:none}
+.primary-button{display:flex;align-items:center;justify-content:space-between;gap:1rem;border:0;border-radius:16px;padding:1rem 1.15rem;background:linear-gradient(135deg,var(--rose),#d43f7b);color:#fff;font-weight:800;box-shadow:0 14px 26px rgba(198,40,104,.23);transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+.primary-button:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 20px 34px rgba(198,40,104,.27);filter:saturate(1.05)}.primary-button:active:not(:disabled){transform:translateY(0) scale(.985)}.primary-button:disabled{opacity:.65;cursor:not-allowed}
+.secondary-button{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.72rem .9rem;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--rose-dark);font-weight:800;transition:transform .2s,box-shadow .2s}
+.secondary-button:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.link-button{border:0;padding:0;background:transparent;color:var(--rose);font-weight:800;text-underline-offset:3px}.link-button:hover{text-decoration:underline}
+.switch-block{display:flex;justify-content:center;gap:.35rem;flex-wrap:wrap;margin-top:1.15rem;color:var(--muted);font-size:.84rem}
+.form-message{min-height:1.35rem;margin:0;color:var(--red);font-size:.82rem;font-weight:800;line-height:1.4}.form-message.success{color:var(--green)}
+.approval-note{margin:1rem 0;color:var(--muted);font-size:.78rem;line-height:1.5}.approval-note a{color:var(--rose);font-weight:800}
+.wide{width:100%;margin-top:.2rem}
+.spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:inline-block}@keyframes spin{to{transform:rotate(360deg)}}
+.shake{animation:shake .42s ease}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+
+.dashboard-page{padding:1rem 1rem 4rem}.dashboard-shell{width:min(1240px,100%);margin:auto}.dashboard-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:76px;padding:.7rem 1rem}.glass-card{background:rgba(255,255,255,.86);border:1px solid rgba(198,40,104,.1);box-shadow:var(--shadow-soft);backdrop-filter:blur(12px);border-radius:22px}
+.logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;font:700 1.35rem "Playfair Display",serif}.logo img{width:47px;height:47px;object-fit:cover;border-radius:14px;border:3px solid #fff;box-shadow:0 7px 16px rgba(198,40,104,.12)}.logo em{color:var(--rose);font-style:normal}.user-menu{display:flex;align-items:center;gap:.75rem}.user-menu>span{color:var(--muted);font-size:.82rem;font-weight:800}
+.hero-dashboard{display:grid;grid-template-columns:minmax(0,1fr) 300px;align-items:center;gap:2rem;padding:4.1rem .6rem 2.6rem}.hero-dashboard p{max-width:720px;margin:0;color:var(--muted);font-size:1rem;line-height:1.7}.hero-cta{display:inline-flex;width:min(230px,100%);margin-top:1.5rem}.floating-logo-card,.owner-mini-card{padding:1rem;border-radius:28px;background:linear-gradient(160deg,#fff,#fff0f6);border:1px solid var(--line);box-shadow:var(--shadow);transform:rotate(2deg);animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-7px) rotate(1deg)}}.floating-logo-card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;display:block}.floating-logo-card span{display:block;text-align:center;margin-top:.65rem;color:var(--rose-dark);font-size:.78rem;font-weight:800}.owner-mini-card strong{display:block;font:700 1.5rem "Playfair Display",serif;color:var(--rose)}.owner-mini-card span{display:block;margin-top:.35rem;color:var(--muted);font-size:.8rem;line-height:1.5}
+.booking-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:1.25rem}.booking-card,.appointments-card,.admin-card{padding:1.4rem}.card-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}.card-heading h2{font-size:1.9rem}.flower{font-size:1.7rem;color:var(--rose)}.card-copy,.manager-note{color:var(--muted);line-height:1.6;font-size:.83rem}.service-field{margin-top:1.25rem}
+.calendar-card{position:relative;overflow:hidden;margin-top:1rem;padding:1rem;border:1px solid #f0d6e1;border-radius:22px;background:linear-gradient(145deg,#fffaff,#fff);isolation:isolate}.calendar-card:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 15%,rgba(246,188,210,.28),transparent 38%),radial-gradient(circle at 10% 85%,rgba(246,188,210,.23),transparent 35%);z-index:-2}.calendar-watermark{position:absolute;inset:0;background-image:url('assets/suldery-nails-logo.jpeg');background-repeat:no-repeat;background-position:center;background-size:min(64%,310px);opacity:.075;z-index:-1;pointer-events:none}
+.calendar-topbar{display:flex;align-items:center;justify-content:space-between;gap:.8rem}.calendar-title{text-align:center}.calendar-title span{display:block;font-size:.58rem;color:var(--rose);font-weight:800;letter-spacing:.16em}.calendar-title h3{margin:.2rem 0 0;color:var(--wine);font:700 1.25rem "Playfair Display",serif;text-transform:capitalize}.month-button{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.9);color:var(--rose);font-size:1.55rem;cursor:pointer;transition:transform .2s,box-shadow .2s}.month-button:hover:not(:disabled){transform:translateY(-2px);box-shadow:var(--shadow-soft)}.month-button:disabled{opacity:.35;cursor:not-allowed}.calendar-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin:.9rem 0;color:var(--muted);font-size:.67rem;font-weight:800}.calendar-legend span{display:flex;align-items:center;gap:.35rem}.legend-dot{width:9px;height:9px;border-radius:50%;display:inline-block}.legend-dot.available{background:var(--rose)}.legend-dot.full{background:var(--red)}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.42rem}.calendar-weekdays{margin-bottom:.4rem;color:#9b838d;font-size:.62rem;font-weight:800;text-align:center;text-transform:uppercase}.calendar-empty{min-height:52px}.calendar-day{position:relative;min-height:66px;padding:.45rem .25rem;border:1px solid rgba(198,40,104,.08);border-radius:15px;background:rgba(255,242,247,.75);color:var(--rose-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.16rem;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s,border-color .18s}.calendar-day strong{font-size:1.03rem}.calendar-day span{font-size:.55rem;text-transform:capitalize;color:#9c7d89}.calendar-day.available:hover{transform:translateY(-3px);box-shadow:0 12px 22px rgba(198,40,104,.14);border-color:#e6a3b9}.calendar-day.available{background:#f8bfd5}.calendar-day.selected{background:var(--rose);color:#fff;box-shadow:0 10px 22px rgba(198,40,104,.26);transform:translateY(-2px)}.calendar-day.selected span{color:#ffe1ed}.calendar-day.full,.calendar-day.rest{background:#f7d5da;color:var(--red);border-color:#efb1ba}.calendar-day.full:hover,.calendar-day.rest:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(196,56,78,.12)}.calendar-day.past{background:#f3eff1;color:#c5b6bd;cursor:not-allowed}.calendar-day.today:after{content:"";position:absolute;top:6px;right:7px;width:5px;height:5px;border-radius:50%;background:#fff}.calendar-feedback{margin:.85rem 0 .1rem;min-height:2.4rem;padding:.68rem .8rem;border-radius:13px;background:rgba(255,243,247,.86);color:var(--rose-dark);font-size:.76rem;font-weight:800;line-height:1.45;text-align:center}
+.time-selection{margin-top:1rem;padding:1rem;border:1px solid #f0d6e1;border-radius:19px;background:#fff}.time-header{display:flex;align-items:end;justify-content:space-between;gap:1rem}.time-header .eyebrow{margin-bottom:.2rem}.field-label{display:block;font-weight:800;font-size:.84rem}.time-hint{color:var(--muted);font-size:.7rem;font-weight:800}.time-slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;margin-top:.7rem}.time-slot{padding:.75rem .4rem;border:1px solid var(--line);border-radius:13px;background:#fff9fb;color:var(--rose-dark);font-weight:800;cursor:pointer;transition:transform .18s,background .18s,box-shadow .18s}.time-slot:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}.time-slot.selected{background:var(--rose);border-color:var(--rose);color:#fff}.time-help{grid-column:1/-1;padding:.3rem 0;color:var(--muted);font-size:.78rem;line-height:1.5}
+#bookingButton{margin-top:1rem}.appointments-list,.admin-list{display:grid;gap:.7rem;margin-top:1rem}.appointment-item,.admin-item{padding:.95rem;border:1px solid var(--line);border-radius:16px;background:#fff9fb}.appointment-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.7rem}.appointment-item strong,.admin-item strong{display:block;font-size:.88rem}.appointment-item p,.admin-item p{margin:.35rem 0 .55rem;color:var(--muted);font-size:.76rem;line-height:1.5}.status{display:inline-flex;padding:.24rem .52rem;border-radius:999px;font-size:.61rem;font-weight:800;white-space:nowrap}.status.accepted{background:#e0f0e5;color:var(--green)}.status.pending{background:#fff0c9;color:#8a6b1e}.status.cancelled,.status.rejected{background:#fde0e3;color:var(--red)}.subtle-link{font-size:.72rem}.empty-state{padding:.7rem 0;color:var(--muted);font-size:.8rem;line-height:1.6}.admin-actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem}.small-button{display:inline-flex;align-items:center;justify-content:center;padding:.56rem .72rem;border:0;border-radius:11px;background:var(--rose);color:#fff;font-size:.73rem;font-weight:800;transition:transform .18s,box-shadow .18s}.small-button:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}.small-button.cancel{background:#f1c2ca;color:#9c2740}.small-button.ghost{background:#f4e9ed;color:#7b5361}
+.portfolio-section{margin-top:2rem}.portfolio-heading{display:flex;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:1rem}.portfolio-heading>p{max-width:360px;margin:0;color:var(--muted);font-size:.82rem;line-height:1.6}.carousel-frame{position:relative;min-height:320px;display:grid;place-items:center;overflow:hidden;border-radius:26px;background:linear-gradient(145deg,#fff4f8,#fff);border:1px solid var(--line);box-shadow:var(--shadow-soft)}.carousel-stage{position:relative;width:min(520px,88%);aspect-ratio:16/10;border-radius:20px;overflow:hidden;box-shadow:0 24px 55px rgba(84,39,56,.15);background:#fff}.carousel-image{width:100%;height:100%;object-fit:cover;display:block}.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--rose);font-size:1.8rem;cursor:pointer;box-shadow:0 9px 20px rgba(71,36,49,.12)}.carousel-arrow.left{left:12px}.carousel-arrow.right{right:12px}.carousel-dots{display:flex;justify-content:center;gap:.4rem;margin-top:.8rem;position:absolute;left:0;right:0;bottom:16px}.carousel-dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#e3c5d0;cursor:pointer}.carousel-dot.active{background:var(--rose);transform:scale(1.25)}
+.stats-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:0 0 1.2rem}.stat-card{padding:1.2rem 1.25rem;border-radius:22px;background:linear-gradient(155deg,#fff,#fff1f6);border:1px solid var(--line);box-shadow:var(--shadow-soft)}.stat-card span{display:block;color:var(--rose);font-size:.62rem;letter-spacing:.15em;font-weight:800}.stat-card strong{display:block;margin-top:.3rem;color:var(--wine);font:700 2rem "Playfair Display",serif}.stat-card small{color:var(--muted);font-size:.72rem}
+.owner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}.schedule-manager,.manual-booking-card,.portfolio-manager{margin-top:1.2rem}.schedule-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1rem}.schedule-day{padding:1rem;border:1px solid var(--line);border-radius:18px;background:#fff9fb}.schedule-day.closed{background:#fff3f4;border-color:#efbcc4}.schedule-day-title{display:flex;align-items:center;justify-content:space-between;gap:1rem}.schedule-day-title strong{font-size:.9rem}.schedule-day-title span{padding:.22rem .5rem;border-radius:99px;background:#e0f0e5;color:var(--green);font-size:.61rem;font-weight:800}.schedule-day.closed .schedule-day-title span{background:#fde0e3;color:var(--red)}.schedule-fields{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.8rem}.switch-row{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:.7rem}.switch-row input{width:auto;accent-color:var(--rose)}.schedule-save{width:100%;margin-top:.65rem}
+.manual-booking-card .owner-booking-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;margin-top:1rem}.owner-booking-form .form-message,.owner-booking-form .primary-button{grid-column:1/-1}.portfolio-manager .card-heading{align-items:center}.file-button{cursor:pointer}.owner-gallery{margin-top:1rem}.photo-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}.portfolio-photo{position:relative;overflow:hidden;aspect-ratio:1;border-radius:18px;background:#f6dce5;margin:0}.portfolio-photo img{width:100%;height:100%;object-fit:cover;display:block}.remove-photo{position:absolute;right:.6rem;top:.6rem;padding:.48rem .6rem;border:0;border-radius:10px;background:rgba(57,29,42,.86);color:#fff;font-size:.69rem;font-weight:800;cursor:pointer}.hidden{display:none!important}
+@media (max-width:1000px){.auth-shell,.auth-shell-reverse{grid-template-columns:1fr}.brand-panel{min-height:43vh;padding:3rem 1.4rem}.brand-panel-inner{max-width:760px;margin:auto}.form-panel{padding:1.2rem}.hero-dashboard{grid-template-columns:1fr;padding-top:3rem}.floating-logo-card,.owner-mini-card{max-width:300px;justify-self:end}.booking-layout{grid-template-columns:1fr}.owner-grid{grid-template-columns:1fr}.schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:680px){.dashboard-page{padding:.6rem .6rem 3rem}.dashboard-header{min-height:68px;padding:.55rem .7rem}.logo span{font-size:1.15rem}.logo img{width:42px;height:42px}.user-menu>span{display:none}.hero-dashboard{padding:2.7rem .2rem 1.8rem}.hero-dashboard h1,.brand-panel h1{font-size:3.15rem}.floating-logo-card,.owner-mini-card{max-width:220px}.booking-card,.appointments-card,.admin-card{padding:1rem}.calendar-card{padding:.7rem}.calendar-days,.calendar-weekdays{gap:.22rem}.calendar-day{min-height:58px;border-radius:12px}.calendar-day strong{font-size:.9rem}.calendar-day span{font-size:.48rem}.time-slots{grid-template-columns:repeat(3,minmax(0,1fr))}.portfolio-heading{display:block}.portfolio-heading>p{margin-top:.4rem}.photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.stats-grid{grid-template-columns:1fr}.schedule-grid{grid-template-columns:1fr}.manual-booking-card .owner-booking-form{grid-template-columns:1fr}.owner-booking-form .form-message,.owner-booking-form .primary-button{grid-column:auto}.calendar-legend{font-size:.59rem}.carousel-frame{min-height:255px}.carousel-stage{width:90%}}
+@media (max-width:430px){.form-panel{padding:.5rem}.form-card{padding:1.25rem;border-radius:22px}.brand-features{grid-template-columns:1fr}.experience-cloud{padding:1rem}.hero-dashboard h1,.brand-panel h1{font-size:2.75rem}.calendar-day{min-height:52px}.calendar-day strong{font-size:.85rem}.time-slot{font-size:.72rem;padding:.65rem .25rem}.carousel-arrow{width:38px;height:38px}}
+
+/* Detalles V5: servicios y gestión del carrusel */
+.service-duration-hint{display:block;margin-top:.48rem;color:var(--rose-dark);font-size:.7rem;font-weight:800}
+.owner-photo{display:flex;flex-direction:column;aspect-ratio:auto;overflow:hidden;border:1px solid var(--line);background:#fff9fb;box-shadow:var(--shadow-soft)}
+.owner-photo img{width:100%;aspect-ratio:1;object-fit:cover;flex:0 0 auto}
+.owner-photo-number{position:absolute;left:.55rem;top:.55rem;z-index:2;min-width:29px;height:29px;display:grid;place-items:center;padding:0 .45rem;border-radius:999px;background:rgba(255,255,255,.92);color:var(--rose-dark);font-size:.7rem;font-weight:800;box-shadow:0 6px 16px rgba(77,29,49,.11)}
+.owner-photo figcaption{padding:.72rem .8rem .25rem;color:var(--wine);font-size:.78rem;font-weight:800}
+.photo-actions{display:grid;grid-template-columns:1fr 1fr 2fr;gap:.45rem;padding:.65rem .7rem .75rem}
+.photo-actions button{position:static;min-height:38px}
+.photo-actions .small-button:disabled{opacity:.38;cursor:not-allowed;transform:none;box-shadow:none}
+.photo-actions .remove-photo{padding:.56rem .7rem;border-radius:11px;background:#fbe4e8;color:var(--red);font-size:.7rem;font-weight:800;border:0;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.photo-actions .remove-photo:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.calendar-watermark{position:absolute;inset:12% 10%;background:url('assets/suldery-nails-logo.jpeg') center/58% auto no-repeat;opacity:.055;pointer-events:none;z-index:0;filter:saturate(.9)}
+.calendar-card > *:not(.calendar-watermark){position:relative;z-index:1}
+.calendar-day.rest,.calendar-day.full{color:#a92843}
+.calendar-day.rest strong,.calendar-day.full strong{color:var(--red)}
+@media (max-width:680px){.photo-actions{grid-template-columns:1fr 1fr 1.8fr}.owner-photo figcaption{font-size:.7rem}.service-duration-hint{font-size:.65rem}}
+
+/* Suldery Nails · interface 2030 */
+:root{
+  --rose:#ff4f9a;
+  --rose-dark:#ff9bc7;
+  --rose-soft:#ffb5d6;
+  --rose-pale:#24152f;
+  --blush:#0c0b1d;
+  --wine:#fff3fa;
+  --ink:#f8f1ff;
+  --muted:#bdb4ca;
+  --line:rgba(255,255,255,.14);
+  --white:#fff;
+  --green:#60e6b3;
+  --red:#ff6d91;
+  --cyan:#5de4ff;
+  --violet:#9476ff;
+  --shadow:0 30px 85px rgba(1,2,20,.5);
+  --shadow-soft:0 16px 42px rgba(0,0,0,.28);
+}
+body{
+  position:relative;
+  overflow-x:hidden;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 8%,rgba(255,79,154,.18),transparent 28%),
+    radial-gradient(circle at 90% 13%,rgba(93,228,255,.14),transparent 27%),
+    radial-gradient(circle at 55% 100%,rgba(148,118,255,.17),transparent 35%),
+    #0c0b1d;
+}
+body:before,body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1}
+body:before{opacity:.22;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 84%)}
+body:after{background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.03) 48%,transparent 63%);transform:translateX(-75%);animation:scan 12s ease-in-out infinite}
+@keyframes scan{50%{transform:translateX(75%)}}
+.auth-page{background:transparent}
+.brand-panel{background:linear-gradient(145deg,rgba(18,12,45,.86),rgba(38,13,46,.72));border-right:1px solid rgba(255,255,255,.09)}
+.brand-panel:before{background:var(--violet);filter:blur(52px);opacity:.27}.brand-panel:after{background:var(--rose);filter:blur(52px);opacity:.28}
+.form-panel{background:rgba(8,8,22,.52)}
+.brand-panel h1,.hero-dashboard h1,.form-card h2,.card-heading h2,.portfolio-heading h2{color:#fff;letter-spacing:-.055em}
+.brand-panel h1 em,.hero-dashboard h1 em{color:var(--rose);text-shadow:0 0 26px rgba(255,79,154,.45)}
+.brand-copy,.experience-cloud p,.brand-note,.form-intro,.card-copy,.manager-note,.hero-dashboard p,.portfolio-heading>p{color:var(--muted)}
+.brand-pill,.brand-pill.soft{color:#ffd3e6;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 0 28px rgba(255,79,154,.12)}
+.brand-pill:before{content:"? LIVE";color:var(--cyan);font-size:.56rem;letter-spacing:.11em}
+.experience-cloud,.feature-chip{background:linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.035));border-color:rgba(255,255,255,.12);box-shadow:var(--shadow-soft);backdrop-filter:blur(18px)}
+.experience-cloud strong,.feature-chip b{color:#fff}.feature-chip small{color:var(--muted)}
+.cloud-sparkle,.feature-chip>span{background:rgba(255,79,154,.18);color:#ffd9ec;box-shadow:0 0 24px rgba(255,79,154,.24)}
+.form-card,.glass-card,.booking-card,.appointments-card,.admin-card{background:linear-gradient(140deg,rgba(29,25,57,.78),rgba(15,14,34,.82));border-color:rgba(255,255,255,.13);box-shadow:var(--shadow);backdrop-filter:blur(22px)}
+.logo-frame{background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(255,79,154,.5));box-shadow:0 0 0 1px rgba(255,255,255,.25),0 18px 44px rgba(255,79,154,.3)}
+.logo-frame img,.logo img{box-shadow:0 0 0 2px rgba(255,255,255,.36),0 0 25px rgba(255,79,154,.34)}
+.eyebrow{color:var(--cyan)}
+label,.field-label{color:#f4efff}
+input,select{color:#fff;background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+input::placeholder{color:#968da5}input:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(93,228,255,.12),0 0 28px rgba(93,228,255,.12)}
+select option{background:#17152d;color:#fff}.password-toggle{background:rgba(255,255,255,.1);color:var(--cyan)}
+.primary-button{position:relative;overflow:hidden;background:linear-gradient(110deg,#ff438f,#9b68ff 55%,#55dff7);box-shadow:0 12px 32px rgba(255,67,143,.26),0 0 35px rgba(93,228,255,.14)}
+.primary-button:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.36),transparent 70%);transform:translateX(-110%);transition:transform .55s ease}.primary-button:hover:before{transform:translateX(110%)}
+.secondary-button,.month-button{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.16);color:#ffd7e8}.secondary-button:hover,.month-button:hover:not(:disabled){border-color:var(--cyan);box-shadow:0 0 25px rgba(93,228,255,.16)}
+.link-button{color:var(--cyan)}.form-message{color:#ff9bb8}.form-message.success{color:var(--green)}
+.dashboard-page{background:transparent}.dashboard-header{position:sticky;top:.75rem;z-index:10;border-color:rgba(255,255,255,.16)}
+.logo{color:#fff}.logo em{color:var(--rose)}.user-menu>span{color:var(--muted)}
+.floating-logo-card,.owner-mini-card,.stat-card{background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));border-color:rgba(255,255,255,.15);box-shadow:var(--shadow)}
+.floating-logo-card span,.owner-mini-card span,.stat-card small{color:var(--muted)}.owner-mini-card strong,.stat-card strong{color:#fff}.stat-card span{color:var(--cyan)}
+.calendar-card,.time-selection{background:rgba(5,7,23,.42);border-color:rgba(255,255,255,.12)}
+.calendar-card:after{background:radial-gradient(circle at 92% 11%,rgba(93,228,255,.15),transparent 34%),radial-gradient(circle at 8% 89%,rgba(255,79,154,.18),transparent 35%)}
+.calendar-title h3{color:#fff}.calendar-title span{color:var(--cyan)}.calendar-weekdays{color:#9c96bb}
+.calendar-day{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.09);color:#fff}.calendar-day span{color:#aaa1c0}.calendar-day.available{background:linear-gradient(145deg,rgba(255,79,154,.48),rgba(148,118,255,.38));border-color:rgba(255,185,218,.32);box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+.calendar-day.available:hover{border-color:var(--cyan);box-shadow:0 10px 30px rgba(93,228,255,.18)}.calendar-day.selected{background:linear-gradient(135deg,#ff438f,#8e6cff);box-shadow:0 12px 30px rgba(255,79,154,.34),0 0 25px rgba(148,118,255,.25)}
+.calendar-day.rest,.calendar-day.full{background:rgba(255,109,145,.12);border-color:rgba(255,109,145,.18);color:#ffb3c4}.calendar-day.past{background:rgba(255,255,255,.025);color:#69637a}
+.calendar-feedback,.appointment-item,.admin-item,.schedule-day{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.1);color:#f4efff}.calendar-feedback{color:#f0d5ff}.appointment-item p,.admin-item p{color:var(--muted)}
+.time-slot{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13);color:#fff}.time-slot.selected{background:linear-gradient(135deg,#ff438f,#8e6cff);border-color:transparent}.time-slot:hover{border-color:var(--cyan);box-shadow:0 0 20px rgba(93,228,255,.13)}
+.status.accepted{background:rgba(96,230,179,.15);color:#a5f4d5}.status.pending{background:rgba(255,207,103,.17);color:#ffe29b}.status.cancelled,.status.rejected{background:rgba(255,109,145,.16);color:#ffb5c6}
+.carousel-frame{background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(15,12,35,.75));border-color:rgba(255,255,255,.13)}
+.schedule-day.closed{background:rgba(255,109,145,.08);border-color:rgba(255,109,145,.18)}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Theme system */
+.theme-toggle{display:inline-flex;align-items:center;gap:.42rem;padding:.58rem .72rem;border:1px solid #eaddec;border-radius:999px;background:rgba(255,255,255,.78);color:#17101e;font-size:.7rem;font-weight:800;cursor:pointer}
+.theme-toggle:hover{transform:translateY(-2px);border-color:#ff4f9a;box-shadow:0 8px 22px rgba(255,79,154,.16)}
+.theme-icon{display:grid;place-items:center;width:1.25rem;height:1.25rem;border-radius:50%;background:#efe5ff;color:#5d33a8}
+:root{--ink:#17101e;--wine:#210d28;--muted:#655a70;--line:#eaddec;--shadow:0 24px 60px rgba(70,32,92,.14);--shadow-soft:0 12px 30px rgba(70,32,92,.09)}
+body{color:var(--ink);background:radial-gradient(circle at 8% 8%,#ffe8f3,transparent 28%),radial-gradient(circle at 92% 14%,#e9faff,transparent 27%),#fff}
+body:before{opacity:.3;background-image:linear-gradient(rgba(126,78,150,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(126,78,150,.035) 1px,transparent 1px)}
+.brand-panel{background:linear-gradient(145deg,#fff0f7 0%,#fff 56%,#f0eaff 100%);border-right-color:rgba(126,78,150,.12)}
+.brand-panel h1,.hero-dashboard h1,.form-card h2,.card-heading h2,.portfolio-heading h2{color:var(--wine)}
+.brand-copy,.experience-cloud p,.brand-note,.form-intro,.card-copy,.manager-note,.hero-dashboard p,.portfolio-heading>p{color:var(--muted)}
+.experience-cloud,.feature-chip{background:rgba(255,255,255,.68);border-color:rgba(198,40,104,.12);box-shadow:var(--shadow-soft)}
+.form-panel{background:rgba(255,255,255,.45)}
+.form-card,.glass-card,.booking-card,.appointments-card,.admin-card{background:rgba(255,255,255,.8);border-color:rgba(126,78,150,.13);box-shadow:var(--shadow)}
+label,.field-label{color:var(--ink)}
+input,select{color:var(--ink);background:rgba(255,255,255,.8);border-color:var(--line)}
+.secondary-button,.month-button{background:rgba(255,255,255,.76);border-color:var(--line);color:#7e2552}
+.logo{color:var(--wine)}.user-menu>span{color:var(--muted)}
+.floating-logo-card,.owner-mini-card,.stat-card{background:linear-gradient(145deg,rgba(255,255,255,.92),rgba(255,242,249,.8));border-color:var(--line);box-shadow:var(--shadow)}
+.floating-logo-card span,.owner-mini-card span,.stat-card small{color:var(--muted)}.owner-mini-card strong,.stat-card strong{color:var(--wine)}
+.calendar-card,.time-selection{background:rgba(255,255,255,.72);border-color:var(--line)}
+.calendar-title h3{color:var(--wine)}.calendar-weekdays{color:#9b839d}
+.calendar-day{background:rgba(255,242,247,.75);border-color:rgba(198,40,104,.08);color:var(--rose-dark)}.calendar-day span{color:#9c7d89}.calendar-day.past{background:#f3eff1;color:#c5b6bd}
+.calendar-feedback,.appointment-item,.admin-item,.schedule-day{background:rgba(255,255,255,.72);border-color:var(--line);color:var(--ink)}.calendar-feedback{color:var(--rose-dark)}.appointment-item p,.admin-item p{color:var(--muted)}
+.time-slot{background:#fff9fb;border-color:var(--line);color:var(--rose-dark)}
+.carousel-frame{background:linear-gradient(145deg,#fff4f8,#fff);border-color:var(--line)}
+.dark-mode{--ink:#f8f1ff;--wine:#fff3fa;--muted:#bdb4ca;--line:rgba(255,255,255,.14);--shadow:0 30px 85px rgba(1,2,20,.5);--shadow-soft:0 16px 42px rgba(0,0,0,.28)}
+.dark-mode body{color:var(--ink);background:radial-gradient(circle at 8% 8%,rgba(255,79,154,.18),transparent 28%),radial-gradient(circle at 90% 13%,rgba(93,228,255,.14),transparent 27%),#0c0b1d}
+.dark-mode .theme-toggle{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff}.dark-mode .theme-icon{background:rgba(93,228,255,.18);color:#5de4ff}
+.dark-mode .brand-panel{background:linear-gradient(145deg,rgba(18,12,45,.86),rgba(38,13,46,.72))}.dark-mode .form-panel{background:rgba(8,8,22,.52)}
+.dark-mode .form-card,.dark-mode .glass-card,.dark-mode .booking-card,.dark-mode .appointments-card,.dark-mode .admin-card{background:linear-gradient(140deg,rgba(29,25,57,.78),rgba(15,14,34,.82));border-color:rgba(255,255,255,.13)}
+.dark-mode input,.dark-mode select{color:#fff;background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.15)}.dark-mode .secondary-button,.dark-mode .month-button{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.16);color:#ffd7e8}.dark-mode .logo{color:#fff}
+.dark-mode .floating-logo-card,.dark-mode .owner-mini-card,.dark-mode .stat-card{background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));border-color:rgba(255,255,255,.15)}
+.dark-mode .calendar-card,.dark-mode .time-selection{background:rgba(5,7,23,.42);border-color:rgba(255,255,255,.12)}.dark-mode .calendar-title h3{color:#fff}
+.dark-mode .calendar-day{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.09);color:#fff}.dark-mode .calendar-day span{color:#aaa1c0}.dark-mode .calendar-day.past{background:rgba(255,255,255,.025);color:#69637a}
+.dark-mode .calendar-feedback,.dark-mode .appointment-item,.dark-mode .admin-item,.dark-mode .schedule-day{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.1);color:#f4efff}.dark-mode .time-slot{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13);color:#fff}.dark-mode .carousel-frame{background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(15,12,35,.75));border-color:rgba(255,255,255,.13)}
+
+
+/* Ajustes de experiencia y tema */
+.hidden-step,.hidden-booking{display:none!important}
+.booking-step{margin-top:1.1rem}
+.booking-summary{margin-top:1.1rem;padding:1rem 1.1rem;border:1px solid var(--line);border-radius:18px;background:rgba(198,40,104,.05)}
+.booking-summary h3{margin:.1rem 0 .8rem;color:var(--wine);font:700 1.35rem "Playfair Display",serif}
+.summary-grid{display:grid;grid-template-columns:auto 1fr;gap:.45rem .9rem;font-size:.8rem}
+.summary-grid span{color:var(--muted);font-weight:700}.summary-grid strong{color:var(--ink)}
+.login-gallery-wrap{margin-top:1.35rem}.login-gallery{margin-top:.5rem;min-height:180px}
+.login-carousel-stage{min-height:170px}
+.login-gallery .carousel-image{max-height:170px}
+.floating-logo-card:has(.carousel-stage){padding:.65rem;transform:rotate(1deg)}
+.floating-logo-card .carousel-stage{min-height:260px}
+.floating-logo-card .carousel-image{aspect-ratio:1/1;max-height:300px}
+.floating-logo-card .carousel-dots{margin-top:.45rem}
+.blocked-date-form{display:grid;grid-template-columns:1fr 1.5fr auto;gap:.8rem;align-items:end;margin-top:1rem}
+.blocked-dates-list{display:grid;gap:.65rem;margin-top:1rem}
+.blocked-date-item{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;border:1px solid var(--line);border-radius:16px;background:rgba(198,40,104,.045)}
+.blocked-date-item strong{display:block;color:var(--ink);text-transform:capitalize}
+.blocked-date-item span{display:block;margin-top:.2rem;color:var(--muted);font-size:.76rem}
+.calendar-day.blocked{background:rgba(196,56,78,.14);border-color:rgba(196,56,78,.34);color:var(--red)}
+.calendar-day.blocked span{color:var(--red)}
+.calendar-day.rest,.calendar-day.full{background:rgba(196,56,78,.08)}
+.calendar-feedback{min-height:1.4rem}
+@media (max-width:900px){
+  .blocked-date-form{grid-template-columns:1fr 1fr}
+  .blocked-date-form .primary-button{grid-column:1/-1}
+}
+@media (max-width:680px){
+  .dashboard-header{align-items:flex-start}.user-menu{flex-wrap:wrap;justify-content:flex-end}
+  .hero-dashboard{grid-template-columns:1fr;padding-top:2.5rem}
+  .floating-logo-card{max-width:360px;margin:auto}
+  .blocked-date-form{grid-template-columns:1fr}
+}
+.dark-mode{
+  background:radial-gradient(circle at 8% 8%,rgba(255,79,154,.18),transparent 28%),
+             radial-gradient(circle at 90% 13%,rgba(93,228,255,.14),transparent 27%),
+             #0c0b1d;
+  color:var(--ink);
+}
+.dark-mode:before{opacity:.18}
+.dark-mode .portfolio-heading h2,
+.dark-mode .booking-summary h3{color:var(--wine)}
+.dark-mode .login-gallery .carousel-image{box-shadow:0 20px 55px rgba(0,0,0,.35)}
+.dark-mode .blocked-date-item{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13)}
+
+
+/* Suldery Nails · calendario premium y temas definitivos */
+.calendar-brand{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:.85rem;padding:.8rem;margin-bottom:.8rem;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,240,247,.76));box-shadow:var(--shadow-soft)}
+.calendar-brand-logo{width:62px;height:62px;padding:4px;border-radius:18px;background:#fff;border:1px solid rgba(198,40,104,.14);box-shadow:0 10px 24px rgba(198,40,104,.13);display:grid;place-items:center;overflow:hidden}
+.calendar-brand-logo img{width:100%;height:100%;object-fit:cover;border-radius:14px;display:block}
+.calendar-brand-copy{min-width:0}.calendar-kicker{display:block;color:var(--rose);font-size:.55rem;letter-spacing:.17em;font-weight:900}.calendar-brand-copy strong{display:block;margin-top:.1rem;color:var(--wine);font:700 1.06rem/1.1 "Playfair Display",serif}.calendar-brand-copy small{display:block;margin-top:.22rem;color:var(--muted);font-size:.68rem;line-height:1.4}
+.calendar-theme-mark{display:flex;align-items:center;gap:.28rem;padding:.4rem .48rem;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid var(--line);color:var(--rose);font-size:.7rem;font-weight:900;white-space:nowrap}
+.calendar-theme-mark span:last-child{opacity:.5}.calendar-title span{letter-spacing:.2em}
+.calendar-legend{margin:.8rem 0 1rem}.calendar-legend .today-dot{background:var(--cyan,#7d5cff)}
+.calendar-day{min-height:74px;padding:.5rem .35rem;gap:.08rem;border-radius:17px}.calendar-day strong{font-size:1.08rem;line-height:1}.calendar-day .calendar-weekday{font-size:.55rem;text-transform:capitalize;color:var(--muted)}.calendar-day small{margin-top:.2rem;padding:.18rem .38rem;border-radius:999px;background:rgba(255,255,255,.55);font-size:.48rem;line-height:1;font-weight:900;color:var(--rose-dark);white-space:nowrap}.calendar-day.available small{background:rgba(255,255,255,.66)}.calendar-day.selected small{background:rgba(255,255,255,.18);color:#fff}.calendar-day.blocked small,.calendar-day.full small,.calendar-day.rest small{background:rgba(196,56,78,.1);color:var(--red)}.calendar-day.past small{background:rgba(80,70,75,.06);color:inherit}.calendar-day.today{outline:2px solid rgba(125,92,255,.32);outline-offset:2px}
+.calendar-empty{min-height:74px}
+body{transition:background .3s ease,color .3s ease}.glass-card,.booking-card,.appointments-card,.admin-card,.calendar-card,.time-selection,.calendar-brand,.calendar-day,.time-slot,.calendar-feedback,.appointment-item,.admin-item,.schedule-day,.carousel-frame,.form-card,.form-panel{transition:background .28s ease,border-color .28s ease,color .28s ease,box-shadow .28s ease}
+body.dark-mode{color:#f8f1ff;background:radial-gradient(circle at 8% 8%,rgba(255,79,154,.18),transparent 28%),radial-gradient(circle at 90% 13%,rgba(93,228,255,.14),transparent 27%),radial-gradient(circle at 55% 100%,rgba(148,118,255,.17),transparent 35%),#0c0b1d}
+body.dark-mode:before{opacity:.18}.auth-page.dark-mode,.dashboard-page.dark-mode{background:transparent}
+body.dark-mode .calendar-brand{background:linear-gradient(135deg,rgba(29,25,57,.92),rgba(43,18,53,.82));border-color:rgba(255,255,255,.13);box-shadow:0 18px 45px rgba(0,0,0,.25)}
+body.dark-mode .calendar-brand-logo{background:#fff;border-color:rgba(255,255,255,.25);box-shadow:0 12px 26px rgba(0,0,0,.35)}
+body.dark-mode .calendar-brand-copy strong{color:#fff}.dark-mode .calendar-theme-mark{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#ffb4d3}
+body.dark-mode .calendar-day small{background:rgba(255,255,255,.08);color:#ffd3e6}body.dark-mode .calendar-day.selected small{background:rgba(255,255,255,.18);color:#fff}body.dark-mode .calendar-day.blocked small,body.dark-mode .calendar-day.full small,body.dark-mode .calendar-day.rest small{background:rgba(255,109,145,.09);color:#ff9db4}body.dark-mode .calendar-day.past small{background:rgba(255,255,255,.04);color:#8a829a}
+body.dark-mode .calendar-feedback,body.dark-mode .appointment-item,body.dark-mode .admin-item,body.dark-mode .schedule-day{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.1);color:#f4efff}
+body.dark-mode .calendar-day.today{outline-color:rgba(93,228,255,.34)}
+body.dark-mode .brand-panel,body.dark-mode .form-panel,body.dark-mode .form-card,body.dark-mode .glass-card,body.dark-mode .booking-card,body.dark-mode .appointments-card,body.dark-mode .admin-card,body.dark-mode .floating-logo-card,body.dark-mode .owner-mini-card,body.dark-mode .stat-card,body.dark-mode .calendar-card,body.dark-mode .time-selection,body.dark-mode .carousel-frame,body.dark-mode .schedule-day{color:#f8f1ff}
+body.dark-mode .portfolio-heading h2,body.dark-mode .booking-summary h3,body.dark-mode .form-card h2,body.dark-mode .card-heading h2,body.dark-mode .brand-panel h1,body.dark-mode .hero-dashboard h1{color:#fff}
+body.dark-mode label,body.dark-mode .field-label{color:#f4efff}body.dark-mode input,body.dark-mode select{color:#fff;background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.15)}
+body.dark-mode .secondary-button,body.dark-mode .month-button{background:rgba(255,255,255,.065);border-color:rgba(255,255,255,.16);color:#ffd7e8}
+body.dark-mode .theme-toggle{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff}
+@media (max-width:680px){.calendar-brand{grid-template-columns:auto 1fr;gap:.65rem}.calendar-brand-logo{width:54px;height:54px}.calendar-theme-mark{grid-column:2;justify-self:start;margin-top:-.2rem}.calendar-brand-copy strong{font-size:1rem}.calendar-brand-copy small{font-size:.63rem}.calendar-day{min-height:68px}.calendar-empty{min-height:68px}.calendar-day small{font-size:.43rem;padding:.16rem .3rem}}
+
+/* === v1.6 · tema global y PWA === */
+html { background: #fff; }
+body { min-height: 100vh; }
+body.dark-mode,
+body.dark-mode.dashboard-page,
+body.dark-mode.auth-page,
+body.dark-mode.owner-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255,79,154,.18), transparent 28%),
+    radial-gradient(circle at 90% 13%, rgba(93,228,255,.14), transparent 27%),
+    radial-gradient(circle at 55% 100%, rgba(148,118,255,.17), transparent 35%),
+    #0c0b1d !important;
+  color: #f8f1ff;
+}
+body.dark-mode .dashboard-shell,
+body.dark-mode .auth-shell {
+  background: transparent;
+}
+body.dark-mode .dashboard-header {
+  background: linear-gradient(140deg, rgba(29,25,57,.88), rgba(15,14,34,.9));
+  border-color: rgba(255,255,255,.14);
+}
+body.dark-mode .logo img {
+  background: #fff;
+  border-color: rgba(255,255,255,.45);
+}
+body.dark-mode .hero-dashboard,
+body.dark-mode .stats-grid,
+body.dark-mode .owner-grid,
+body.dark-mode .booking-layout,
+body.dark-mode .admin-card,
+body.dark-mode .portfolio-heading,
+body.dark-mode .card-heading {
+  color: #f8f1ff;
+}
+body.dark-mode .brand-panel,
+body.dark-mode .form-panel,
+body.dark-mode .form-card {
+  background: linear-gradient(145deg, rgba(18,12,45,.86), rgba(10,9,25,.88));
+}
+body.dark-mode .brand-pill.soft { background: rgba(255,255,255,.08); }
+body.dark-mode .install-app-button {
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+}
+.install-app-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: .58rem .78rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,.78);
+  color: var(--rose-dark);
+  font-size: .68rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+.install-app-button:hover { transform: translateY(-2px); border-color: var(--rose); box-shadow: var(--shadow-soft); }
+.install-app-button[hidden] { display: none !important; }
+@media (max-width: 680px) {
+  .install-app-button { font-size: .62rem; padding: .5rem .65rem; }
+}

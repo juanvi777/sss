@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0b1d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Suldery Nails">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/assets/suldery-nails-icon-180.png">
+  <title>Suldery Nails | Mi agenda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=2032">
+</head>
+<body class="dashboard-page">
+  <main class="dashboard-shell">
+    <header class="dashboard-header glass-card">
+      <a class="logo" href="cliente.html"><img src="/assets/suldery-nails-logo.jpeg" alt="Suldery Nails"><span>Suldery <em>Nails</em></span></a>
+      <div class="user-menu"><button id="installAppButton" class="install-app-button" type="button" hidden>＋ Instalar app</button><button class="theme-toggle" type="button" data-theme-toggle aria-label="Activar modo oscuro"><span class="theme-icon">☾</span><span class="theme-label">Modo oscuro</span></button><span id="welcomeName"></span><button class="secondary-button" type="button" data-action="logout">Cerrar sesión</button></div>
+    </header>
+
+    <section class="hero-dashboard">
+      <div>
+        <div class="brand-pill soft">✦ SULDERY NAILS</div>
+        <h1>Tu próximo momento de<br><em>brillo</em> comienza aquí.</h1>
+        <p>Conoce nuestros diseños y, cuando estés lista, presiona el botón para comenzar tu reserva paso a paso.</p>
+        <button id="openBookingButton" class="primary-button hero-cta" type="button">Agendar cita <span>→</span></button>
+      </div>
+      <div id="clientHeroGallery" class="floating-logo-card"><img src="/assets/suldery-nails-logo.jpeg" alt="Suldery Nails"><span>Uñas hechas con amor ♡</span></div>
+    </section>
+
+    <section id="agenda" class="booking-layout hidden-booking">
+      <section class="booking-card glass-card">
+        <div class="card-heading">
+          <div><p class="eyebrow">NUEVA CITA</p><h2>Paso 1 · Escoge tu día</h2></div>
+          <button id="closeBookingButton" class="link-button" type="button">Cerrar</button>
+        </div>
+        <div class="calendar-card">
+          <div class="calendar-watermark"></div>
+          <div class="calendar-brand">
+            <div class="calendar-brand-logo" aria-hidden="true">
+              <img src="/assets/suldery-nails-logo.jpeg" alt="Logo de Suldery Nails">
+            </div>
+            <div class="calendar-brand-copy">
+              <span class="calendar-kicker">SULDERY NAILS</span>
+              <strong>Reserva tu momento</strong>
+              <small>Elige un día disponible y sigue los pasos para agendar.</small>
+            </div>
+            <div class="calendar-theme-mark" aria-hidden="true"><span>☼</span><span>◐</span></div>
+          </div>
+
+          <div class="calendar-topbar">
+            <button id="previousMonth" class="month-button" type="button" aria-label="Mes anterior">‹</button>
+            <div class="calendar-title"><span>CALENDARIO DE CITAS</span><h3 id="calendarMonthLabel"></h3></div>
+            <button id="nextMonth" class="month-button" type="button" aria-label="Mes siguiente">›</button>
+          </div>
+
+          <div class="calendar-legend">
+            <span><i class="legend-dot available"></i> Disponible</span>
+            <span><i class="legend-dot full"></i> No disponible</span>
+            <span><i class="legend-dot today-dot"></i> Hoy</span>
+          </div>
+
+          <div class="calendar-weekdays"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div>
+          <div id="calendarDays" class="calendar-days"></div>
+          <p id="calendarFeedback" class="calendar-feedback">Selecciona un día disponible para continuar.</p>
+        </div>
+
+        <div class="time-selection booking-step" id="timeStep">
+          <div class="time-header"><div><p class="eyebrow">PASO 2</p><span class="field-label">Elige una hora</span></div><span id="timeHint" class="time-hint">Selecciona primero un día</span></div>
+          <div id="timeSlots" class="time-slots"><span class="time-help">Primero selecciona una fecha.</span></div>
+        </div>
+
+        <div class="service-selection booking-step hidden-step" id="serviceStep">
+          <div class="time-header"><div><p class="eyebrow">PASO 3</p><span class="field-label">¿Qué te vas a realizar?</span></div></div>
+          <label class="service-field">Servicio
+            <select id="service">
+              <option value="Manicure semipermanente">Manicure semipermanente · 1 hora</option>
+              <option value="Pedicure">Pedicure · 1 hora</option>
+              <option value="Polygel">Polygel · 2 horas</option>
+              <option value="Dipping">Dipping · 1 hora</option>
+              <option value="Forrado">Forrado · 1 hora</option>
+            </select>
+            <small id="serviceDurationHint" class="service-duration-hint">Duración: 1 hora</small>
+          </label>
+        </div>
+
+        <div id="bookingSummary" class="booking-summary hidden-step">
+          <p class="eyebrow">PASO 4</p>
+          <h3>Confirma tu cita</h3>
+          <div class="summary-grid"><span>Fecha</span><strong id="summaryDate"></strong><span>Hora</span><strong id="summaryTime"></strong><span>Servicio</span><strong id="summaryService"></strong><span>Duración</span><strong id="summaryDuration"></strong></div>
+        </div>
+
+        <p id="bookingMessage" class="form-message" role="alert"></p>
+        <button id="bookingButton" class="primary-button hidden-step" type="button">Confirmar cita <span>→</span></button>
+      </section>
+
+      <aside class="appointments-card glass-card">
+        <div class="card-heading"><div><p class="eyebrow">MI AGENDA</p><h2>Mis citas</h2></div><span class="flower">♡</span></div>
+        <p class="card-copy">Aquí verás tus solicitudes y las confirmaciones de Suldery.</p>
+        <div id="appointmentsList" class="appointments-list"></div>
+      </aside>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="portfolio-heading"><div><p class="eyebrow">INSPÍRATE</p><h2>Diseños hechos con amor</h2></div><p>Un carrusel suave para que conozcas trabajos recientes.</p></div>
+      <div id="clientGallery" class="carousel-frame"></div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+  <script src="cliente.js"></script>
+</body>
+</html>

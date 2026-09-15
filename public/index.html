@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0b1d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Suldery Nails">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/assets/suldery-nails-icon-180.png">
+  <title>Suldery Nails | Iniciar sesión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=2032">
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <section class="brand-panel">
+      <div class="brand-panel-inner">
+        <div class="brand-pill">✦ ESTUDIO DE UÑAS</div>
+        <h1>Donde tus manos<br><em>brillan.</em></h1>
+        <p class="brand-copy">Un rincón tierno para consentirte, elegir tu diseño y salir feliz con unas uñas hechas con amor.</p>
+
+        <div class="experience-cloud">
+          <span class="cloud-sparkle">✦</span>
+          <div>
+            <strong>17 años de experiencia</strong>
+            <p>Hola, soy Suldery. Llevo 17 años dedicando mi corazón a esta hermosa profesión y creando uñas que cuentan tu estilo.</p>
+          </div>
+        </div>
+
+        <div class="brand-features">
+          <div class="feature-chip"><span>♡</span><div><b>Agenda sencilla</b><small>Elige fecha y hora sin complicarte.</small></div></div>
+          <div class="feature-chip"><span>✿</span><div><b>Atención cercana</b><small>Tu solicitud queda cuidada y organizada.</small></div></div>
+        </div>
+
+        <div class="login-gallery-wrap">
+          <p class="eyebrow">INSPÍRATE</p>
+          <div id="loginGallery" class="carousel-frame login-gallery"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-card">
+        <div class="logo-frame">
+          <img src="/assets/suldery-nails-logo.jpeg" alt="Logo de Suldery Nails">
+        </div>
+        <p class="eyebrow">BIENVENIDA</p>
+        <h2>Qué alegría verte</h2>
+        <p class="form-intro">Ingresa a tu cuenta para reservar tu próxima cita.</p>
+
+        <form id="loginForm" novalidate>
+          <label for="loginEmail">Correo electrónico
+            <input id="loginEmail" type="email" autocomplete="username" placeholder="tucorreo@ejemplo.com">
+          </label>
+          <label for="loginPassword">Contraseña
+            <div class="password-wrap">
+              <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Tu contraseña">
+              <button id="togglePassword" class="password-toggle" type="button" aria-label="Mostrar contraseña">◉</button>
+            </div>
+          </label>
+          <p id="loginMessage" class="form-message" role="alert"></p>
+          <button id="loginButton" class="primary-button" type="submit">Iniciar sesión <span>→</span></button>
+        </form>
+
+
+        <button id="installAppButton" class="install-app-button" type="button" hidden>＋ Instalar Suldery Nails</button>
+
+        <div class="switch-block">
+          <span>¿Aún no tienes cuenta?</span>
+          <button id="goRegister" class="link-button" type="button">Regístrate aquí</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
